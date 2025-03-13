@@ -11,5 +11,5 @@ Ele possui:
   - O Google Cloud Storage é um serviço de gerenciamento do armazenamento de dados não estruturados.
  
 ## Mapa do Projeto </br>
-![Mapa Mental com as informações base da estrutura do projeto.](https://myoctocat.com/assets/images/base-octocat.svg)
+![Mapa Mental com as informações base da estrutura do projeto.](https://github.com/StellaOli/DBAvan-ado/blob/main/Diagrama.png)
 
