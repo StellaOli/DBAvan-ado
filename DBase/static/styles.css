@@ -1,0 +1,435 @@
+/* ============================
+   Reset e Tipografia Básica
+============================ */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fafafa;
+}
+
+/* ============================
+   Cabeçalho e Navegação
+============================ */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   Área Principal
+============================ */
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================
+   Mensagens de Erro e Alerta
+============================ */
+.error, .alert-danger, .error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* ============================
+   Formulários
+============================ */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea, 
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+/* ============================
+   Botões
+============================ */
+button, .btn, .btn-home {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover, .btn-home:hover {
+    background: #0069d9;
+}
+
+/* Botões Personalizados */
+.btn-like {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-liked {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.heart-icon {
+    margin-right: 5px;
+}
+
+/* ============================
+   Estatísticas
+============================ */
+.stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 200px;
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    color: #3498db;
+}
+
+/* ============================
+   Tabelas
+============================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #fff;
+}
+
+th, td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background: #f2f2f2;
+}
+
+/* ============================
+   Rodapé
+============================ */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ecf0f1;
+    margin-top: 2rem;
+}
+
+/* ============================
+   Containers e Layouts
+============================ */
+.form-container, .search-container, .monitor-container, .login-container, .confirmation-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.results-grid, .status-grid, .user-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+/* ============================
+   Cartões
+============================ */
+.track-card, .user-card, .detail-card, .actions-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #fff;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.track-card:hover, .user-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ============================
+   Imagens de Faixas
+============================ */
+.track-image {
+    height: 200px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.track-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-image {
+    color: #666;
+    text-align: center;
+}
+
+.track-info {
+    padding: 1rem;
+}
+
+/* ============================
+   Status
+============================ */
+.status-card {
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-up {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+}
+
+.status-down {
+    background-color: #ffebee;
+    border-left: 4px solid #f44336;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.status-dot, .up, .down {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.up, .up {
+    background-color: #4caf50;
+}
+
+.status-dot.down, .down {
+    background-color: #f44336;
+}
+
+.latency, .error-details {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.error-details {
+    color: #d32f2f;
+}
+
+/* ============================
+   Controles
+============================ */
+.refresh-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+/* ============================
+   Página de Erro
+============================ */
+.error-page, .error-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.error-header h1 {
+    color: #dc3545;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.error-instructions {
+    margin: 1.5rem 0;
+    color: #6c757d;
+}
+
+.error-separator {
+    height: 1px;
+    background: #dee2e6;
+    margin: 1.5rem 0;
+}
+
+.error-footer {
+    margin-top: 2rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* ============================
+   Confirmação
+============================ */
+.confirmation-card {
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.confirmation-details {
+    margin: 2rem auto;
+    text-align: left;
+    max-width: 500px;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-label {
+    font-weight: bold;
+    width: 120px;
+}
+
+.detail-value {
+    flex: 1;
+}
+
+.next-steps {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.next-steps ul {
+    padding-left: 1.5rem;
+}
+
+.next-steps li {
+    margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* ============================
+   Detalhes da Música
+============================ */
+.song-detail-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.song-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.song-header .artist {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.song-details {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.recommendations-list {
+    margin-top: 1rem;
+}
+
+.recommendation-item {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}

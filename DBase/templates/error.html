@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="error-page">
+    <div class="error-header">
+        <h1>Ocorreu um erro</h1>
+    </div>
+    
+    <div class="error-content">
+        <div class="error-message">
+            <p><strong>Erro:</strong> {{ error }}</p>
+        </div>
+        
+        <div class="error-instructions">
+            <p>Por favor, tente novamente mais tarde ou entre em contato com o suporte.</p>
+        </div>
+        
+        <div class="error-separator"></div>
+        
+        <div class="error-actions">
+            <a href="/" class="btn-home">Voltar para a página inicial</a>
+        </div>
+    </div>
+    
+    <div class="error-footer">
+        <p>Sistema Cypher - Persistência Poliglota</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Selecione seu Usuário</h2>
+    
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <div class="user-list">
+        {% for user in users %}
+        <div class="user-card">
+            <div class="user-info">
+                <h4>{{ user.name }}</h4>
+                <p class="text-muted">{{ user.email }}</p>
+                {% if user.preferences %}
+                <div class="preferences">
+                    <small>Preferências:</small>
+                    {% for pref in user.preferences %}
+                    <span class="badge">{{ pref }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <a href="/login/{{ user.id }}" class="btn btn-primary">
+                Entrar como {{ user.name.split.0 }}
+            </a>
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            Nenhum usuário cadastrado. Por favor, crie um usuário primeiro.
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="new-user">
+        <p>Não encontrou seu usuário?</p>
+        <a href="/users/create" class="btn btn-secondary">Criar Novo Usuário</a>
+    </div>
+</div>
+{% endblock %}

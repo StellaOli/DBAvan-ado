@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="confirmation-container">
+    <div class="confirmation-card">
+        <h2>✅ Recomendação Solicitada com Sucesso</h2>
+        
+        <div class="confirmation-details">
+            <div class="detail-row">
+                <span class="detail-label">Usuário:</span>
+                <span class="detail-value">{{ user_id }}</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Música Atual:</span>
+                <span class="detail-value">{{ current_song }}</span>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>Próximos Passos</h3>
+            <ul>
+                <li>Nossa equipe irá analisar suas preferências</li>
+                <li>Você receberá recomendações personalizadas em breve</li>
+                <li>Verifique seu histórico de recomendações</li>
+            </ul>
+        </div>
+
+        <div class="action-buttons">
+            <a href="/recommendations/request" class="btn btn-primary">Solicitar Outra Recomendação</a>
+            <a href="/" class="btn btn-secondary">Voltar ao Início</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

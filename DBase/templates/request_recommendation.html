@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Solicitar Recomendação Musical</h2>
+    
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" class="recommendation-form">
+        <div class="form-group">
+        <label>Usuário:</label>
+        <input type="text" value="{{ user.name }}" readonly>
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        </div>
+        
+        <div class="form-group">
+            <label for="current_song">Música Atual:</label>
+            <select id="current_song" name="current_song" required class="form-control">
+                <option value="">Selecione uma música</option>
+                {% for song in songs %}
+                <option value="{{ song['_id'] }}">{{ song['title'] }} - {{ song['artist'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Solicitar Recomendação</button>
+    </form>
+</div>
+{% endblock %}
