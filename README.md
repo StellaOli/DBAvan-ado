@@ -7,8 +7,8 @@ Ele possui:
 * 1 banco relacional: POSTGRESQL
 * 2 bancos não relacionais: REDIS/MONGODB
 * 1 mensageria: APACHE KAFKA
-  - Teremos a implementação do KAFKA CONSUMER API para ler as mensagens que o S1 vai gerar e receber, e buscar dados que o S3 armazenou no Google Cloud Storage dessas mensagens.
-  - O Google Cloud Storage é um serviço de gerenciamento do armazenamento de dados não estruturados.
+  - Teremos a implementação do KAFKA CONSUMER API para ler as mensagens que o S1 vai gerar e receber, e buscar dados que o S3 armazenou no Elasticsearch dessas mensagens.
+  - O Elasticsearch é um serviço de gerenciamento do armazenamento de dados não estruturados.
  
 ## Mapa do Projeto </br>
 ![Mapa Mental com as informações base da estrutura do projeto.](https://github.com/StellaOli/DBAvan-ado/blob/main/Diagrama.png)
