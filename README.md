@@ -49,7 +49,7 @@ Antes de começar, você precisará ter instalado:
    ```
 
 2. **Acesse a aplicação**:
-   Abra seu navegador em **EM GUIA ANÔNIMA** [http://localhost:8001](http://localhost:8001)
+   Abra seu navegador **EM GUIA ANÔNIMA** [http://localhost:8001](http://localhost:8001)
 
 3. **Serviços adicionais**:
    - API: roda na porta 8000
