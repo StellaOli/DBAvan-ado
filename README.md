@@ -5,7 +5,7 @@
 
 ## 🚀 Visão Geral
 
-O Cypher Music é um sistema inteligente de recomendação musical que combina tecnologias modernas para criar uma experiência personalizada de descoberta de músicas. O projeto utiliza:
+O Cypher Music é início um sistema inteligente de recomendação musical que combina tecnologias modernas para criar uma experiência personalizada de descoberta de músicas. O projeto utiliza:
 
 - **FastAPI** para a API principal
 - **Kafka** para processamento de eventos em tempo real
