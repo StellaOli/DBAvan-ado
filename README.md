@@ -95,6 +95,104 @@ cypher-music/
 └── README.md          # Este arquivo
 ```
 
+
+# 🗃️ Arquitetura de Bancos de Dados do Cypher Music
+
+## Por que múltiplos bancos de dados?
+
+O Cypher Music utiliza uma abordagem **polyglot persistence**, selecionando o banco de dados mais adequado para cada tipo de dado e padrão de acesso. Veja a estratégia por trás de cada escolha:
+
+---
+
+## 🐓 **CockroachDB (PostgreSQL) - Dados de Usuários**
+**Por que escolhemos?**  
+- 💪 **Consistência forte**: Para dados críticos como informações de usuários e preferências  
+- ✍️ **Transações ACID**: Garantia em operações como criação/atualização de perfis  
+- 🔍 **Consultas complexas**: Facilidade para JOINs e análises relacionais  
+- ☁️ **Multi-região**: Capacidade nativa de distribuição geográfica (importante para escalabilidade)  
+
+**O que armazenamos?**  
+- Perfis de usuários  
+- Preferências musicais  
+- Relacionamentos básicos  
+
+---
+
+## 🍃 **MongoDB - Dados de Músicas e Recomendações**
+**Por que escolhemos?**  
+- 🎵 **Estrutura flexível**: Músicas têm metadados variáveis (álbum, artistas, gêneros)  
+- 🚀 **Desempenho em leitura**: Ideal para consultas rápidas de catálogo  
+- 📈 **Escala horizontal**: Facilidade para lidar com crescimento do catálogo  
+- 🔗 **Agregações ricas**: Pipeline para gerar recomendações personalizadas  
+
+**O que armazenamos?**  
+- Catálogo completo de músicas  
+- Histórico de reprodução  
+- Likes/dislikes  
+- Modelos de recomendação  
+
+---
+
+## 🔴 **Redis - Cache e Sessões**
+**Por que escolhemos?**  
+- ⚡ **Latência ultrabaixa**: Respostas em milissegundos para buscas frequentes  
+- 🎯 **Cache inteligente**: Reduz carga nos bancos primários  
+- ⏱️ **Expiração automática**: Ideal para sessões temporárias  
+- 📊 **Estruturas de dados ricas**: Sets para recomendações em tempo real  
+
+**O que armazenamos?**  
+- Cache de buscas no Spotify  
+- Sessões de usuários ativos  
+- Recomendações temporárias  
+- Filas de processamento  
+
+---
+
+## 📊 **Elasticsearch - Logs e Monitoramento**
+**Por que escolhemos?**  
+- 🔎 **Busca full-text**: Para análise detalhada de logs  
+- 📉 **Visualização temporal**: Monitoramento de padrões ao longo do tempo  
+- 🚨 **Alertas em tempo real**: Detecção de anomalias no sistema  
+- 📈 **Escalabilidade**: Lida com grandes volumes de dados de telemetria  
+
+**O que armazenamos?**  
+- Logs de aplicação  
+- Métricas de desempenho  
+- Eventos de recomendação  
+- Alertas do sistema  
+
+---
+
+## 🔄 **Kafka - Fluxo de Eventos**
+**Tecnicamente não é um banco**, mas é crucial para:  
+- 💾 **Buffer persistente**: Mantém eventos mesmo durante falhas  
+- 🔁 **Processamento assíncrono**: Desacopla componentes do sistema  
+- 📡 **Streaming em tempo real**: Para atualizações instantâneas de recomendações  
+
+**O que trafega?**  
+- Ações de usuários  
+- Solicitações de recomendação  
+- Eventos do sistema  
+
+---
+
+## 🌐 **Visão Integrada**
+```mermaid
+graph TD
+    A[Aplicação Frontend] -->|HTTP| B[FastAPI]
+    B -->|SQL| C[CockroachDB]
+    B -->|Documentos| D[MongoDB]
+    B -->|Cache| E[Redis]
+    B -->|Eventos| F[Kafka]
+    F --> G[Consumer]
+    G --> D
+    G --> H[Elasticsearch]
+    C -->|Sincronização| D
+    D -->|Cache| E
+```
+
+Cada banco foi escolhido para **maximizar desempenho**, **garantir confiabilidade** e **permitir escalabilidade** em sua área específica, formando um ecossistema completo para recomendações musicais inteligentes.
+
 ## ✉️ Alunos
 
 Luís Marim - 22.224.018-6 </br>
