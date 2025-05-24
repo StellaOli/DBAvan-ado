@@ -97,7 +97,7 @@ cypher-music/
 
 ## ✉️ Alunos
 
-Luís Marim - 22.224.018-6
+Luís Marim - 22.224.018-6 </br>
 Stella Oli - 22.125.082-2
 ---
 
