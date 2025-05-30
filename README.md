@@ -126,9 +126,8 @@ O Cypher Music utiliza uma abordagem **polyglot persistence**, selecionando o ba
 - 🔗 **Agregações ricas**: Pipeline para gerar recomendações personalizadas  
 
 **O que armazenamos?**  
-- Catálogo completo de músicas  
-- Histórico de reprodução  
-- Likes/dislikes  
+- Catálogo completo de músicas   
+- Likes 
 - Modelos de recomendação  
 
 ---
